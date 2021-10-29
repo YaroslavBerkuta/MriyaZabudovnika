@@ -1,5 +1,6 @@
 import React from 'react'
 import Maps from '../Components/Map'
+import ContactForm from "../Components/ContactForm";
   
 
 export default function Contact(){
@@ -68,17 +69,7 @@ export default function Contact(){
                             </div>
                         </div>
                         <div className="left__bottom">
-                            <div className="contact__form">
-                                <h3>Залиште нам повідомлення</h3>
-                                <form action="">
-                                    <div className="form__top">
-                                        <input type="text" placeholder="Ім’я"/>
-                                        <input type="tel" placeholder="Номер телефону"/>
-                                    </div>
-                                    <textarea name="massage" id=""  placeholder="Повідомлення" ></textarea>
-                                    <button type="submit">Надіслати</button>
-                                </form>
-                            </div>
+                            <ContactForm />
                         </div>
                     </div>
                 </div>

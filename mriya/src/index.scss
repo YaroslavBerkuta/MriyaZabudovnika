@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap');
+
 /*! tailwindcss v2.1.1 | MIT License | https://tailwindcss.com */
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
@@ -14,7 +16,6 @@ Use a better box model (opinionated).
 *::before,
 *::after {
   box-sizing: border-box;
-  user-select: none;
 }
 
 /**
@@ -1547,6 +1548,7 @@ section {
 
 .form__main-input {
   outline: none;
+  height: 60px;
   color: black;
   padding: 16px;
   width: 312px;
