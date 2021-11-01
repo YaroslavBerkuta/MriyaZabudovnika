@@ -14,6 +14,7 @@ import Gallery from "./Page/Gallery.jsx";
 import MetalPlasticProducts from "./Page/MetalPlasticProducts.jsx";
 import EnterDors from "./Page/EnterDors.jsx";
 import SectionalGates from "./Page/SectionalGates.jsx";
+import About from './Page/About'
 
 function App() {
   return (
@@ -43,6 +44,9 @@ function App() {
         </Route>
         <Route path="/SectionalGates">
           <SectionalGates />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
       </main>
       <Footer />

@@ -596,4 +596,16 @@ document.addEventListener("DOMContentLoaded", function () {
       catalogItem[i].classList.add("animate__fadeInLeft");
     }
   }
+  const burger = document.querySelector(".header__burger")
+  const menu = document.querySelector(".header__menu")
+  const menuLink = document.querySelectorAll(".menu__link")
+
+  burger.addEventListener('click',()=>{
+    menu.classList.toggle("active")
+  })
+  menuLink.forEach(item=>{
+    item.addEventListener('click',()=>{
+      menu.classList.remove("active")
+    })
+  })
 });

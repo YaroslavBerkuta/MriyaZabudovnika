@@ -12,11 +12,6 @@ export default function Header() {
           </Link>
         </div>
         <div className="header__menu">
-          <div className="header__burger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
           <nav className="menu">
             <ul className="menu__list">
               <li className="menu__item">
@@ -35,18 +30,23 @@ export default function Header() {
                 </Link>
               </li>
               <li className="menu__item">
-                <Link to="/about-us" className="menu__link">
+                <Link to="/about" className="menu__link">
                   Про нас
                 </Link>
               </li>
             </ul>
           </nav>
-        </div>
-        <div className="header__phone">
+          <div className="header__phone">
           <a href="tel:+380676738289" className="phone__number">
             +380 67 673 8289
           </a>
         </div>
+        </div>
+        <div className="header__burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
       </div>
     </header>
   );

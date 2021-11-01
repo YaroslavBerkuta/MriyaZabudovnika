@@ -6,7 +6,7 @@ import HomeCatalog from "../Components/HomeCatalog";
 import MainForm from "../Components/MainForm";
 import Partners from "../Components/Partners";
 
-export default function Home({ DB, testApi }) {
+export default function Home({ DB }) {
   return (
     <React.Fragment>
       <section className="hero">
