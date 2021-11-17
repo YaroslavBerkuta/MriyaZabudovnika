@@ -60,7 +60,7 @@ export default function Home({ DB }) {
           </div>
         </div>
       </section>
-      <section className="news">
+      {/*<section className="news">
         <div className="container">
           <h2 className="title">Новини</h2>
           <div className="news__flex">
@@ -114,7 +114,7 @@ export default function Home({ DB }) {
             </div>
           </div>
         </div>
-      </section>
+  </section>*/}
     </React.Fragment>
   );
 }

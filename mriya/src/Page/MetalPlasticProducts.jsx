@@ -2,7 +2,7 @@ import React from "react";
 import SwiperCore, { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import MainForm from "../Components/MainForm";
-import stortz from "../assets/img/stortz.png";
+import stortz from "../assets/img/kaban.png";
 
 export default function MetalPlasticProducts() {
   SwiperCore.use([Autoplay, Navigation]);

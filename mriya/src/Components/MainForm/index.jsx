@@ -4,8 +4,6 @@ import axios from "axios";
 
 const API_PATH = "https://blagovischenska.com/";
 
-
-
 class MainForm extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +12,7 @@ class MainForm extends Component {
       user_phone: "",
       user_select: "",
     };
-  };
+  }
 
   handleFormSubmit = (e) => {
     e.preventDefault();
@@ -24,76 +22,80 @@ class MainForm extends Component {
       url: `${API_PATH}`,
       data: this.state,
     })
-        .then((result) => {
-          this.setState({
-            mailSent: result.data.sent,
-          });
-        })
-        .catch((error) => this.setState({ error: error.message }));
+      .then((result) => {
+        this.setState({
+          mailSent: result.data.sent,
+        });
+      })
+      .catch((error) => this.setState({ error: error.message }));
   };
   render() {
     return (
-        <section className="main__form">
-          <div className="container">
-            <div className="form__flex">
-              <div className="form__title">
-                <h2 className="title">Залиште замовлення</h2>
-                <p className="form__description">
-                  Замовити заміри, доставку, отримати інформацію про
-                  металопластикові вироби, міжкімнатні та вхідні двері, секційні
-                  ворота, замір, монтаж - заповніть форму і менеджер зважиться з
-                  вами найближчим часом
-                </p>
-              </div>
-              <div className="form__main">
-                <form className="main-form" action='#'>
-                  <input
-                      type="text"
-                      name="user_name"
-                      id="user_name"
-                      placeholder="Ім`я"
-                      className="form__main-input"
-                      onChange={(e) => this.setState({ user_name: e.target.value })}
-                  />
-                  <input
-                      type="tel"
-                      name="user_phone"
-                      id="user_phone"
-                      placeholder="Номер телефону"
-                      className="form__main-input"
-                      onChange={(e) => this.setState({ user_phone: e.target.value })}
-                  />
-                  <select className="form__main-input" name="user_select" id='user_select' onChange={(e) => this.setState({ user_select: e.target.value })}>
-                    <option>Вас цікавить..</option>
-                    <option value="Металопластикові вироби">
-                      Металопластикові вироби
-                    </option>
-                    <option value="Міжкімнатні та вхідні двері">
-                      Міжкімнатні та вхідні двері
-                    </option>
-                    <option value="Секційні ворота">Секційні ворота</option>
-                    <option value="Замір">Замір</option>
-                    <option value="Монтаж">Монтаж</option>
-                  </select>
-                  <input
-                      type="submit"
-                      value="Надіслати"
-                      className="form__main-btn"
-                      id="sendMail"
-                      onClick={(e) => this.handleFormSubmit(e)}
-                  />
-                </form>
-              </div>
+      <section className="main__form">
+        <div className="container">
+          <div className="form__flex">
+            <div className="form__title">
+              <h2 className="title">ЗАМОВИТИ ДЗВІНОК</h2>
+              <p className="form__description">
+                Замовити заміри, доставку, отримати інформацію про
+                металопластикові вироби, міжкімнатні та вхідні двері, секційні
+                ворота, замір, монтаж - заповніть форму і менеджер зважиться з
+                вами найближчим часом
+              </p>
+            </div>
+            <div className="form__main">
+              <form className="main-form" action="#">
+                <input
+                  type="text"
+                  name="user_name"
+                  id="user_name"
+                  placeholder="Ім`я"
+                  className="form__main-input"
+                  onChange={(e) => this.setState({ user_name: e.target.value })}
+                />
+                <input
+                  type="tel"
+                  name="user_phone"
+                  id="user_phone"
+                  placeholder="Номер телефону"
+                  className="form__main-input"
+                  onChange={(e) =>
+                    this.setState({ user_phone: e.target.value })
+                  }
+                />
+                <select
+                  className="form__main-input"
+                  name="user_select"
+                  id="user_select"
+                  onChange={(e) =>
+                    this.setState({ user_select: e.target.value })
+                  }
+                >
+                  <option>Вас цікавить..</option>
+                  <option value="Металопластикові вироби">
+                    Металопластикові вироби
+                  </option>
+                  <option value="Міжкімнатні та вхідні двері">
+                    Міжкімнатні та вхідні двері
+                  </option>
+                  <option value="Секційні ворота">Секційні ворота</option>
+                  <option value="Замір">Замір</option>
+                  <option value="Монтаж">Монтаж</option>
+                </select>
+                <input
+                  type="submit"
+                  value="Надіслати"
+                  className="form__main-btn"
+                  id="sendMail"
+                  onClick={(e) => this.handleFormSubmit(e)}
+                />
+              </form>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
     );
   }
 }
 
 export default MainForm;
-
-
-
-
-

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/img/logo.svg";
+import logo from "../../assets/img/logo1.svg";
 
 export default function Header() {
   return (
@@ -37,16 +37,16 @@ export default function Header() {
             </ul>
           </nav>
           <div className="header__phone">
-          <a href="tel:+380676738289" className="phone__number">
-            +380 67 673 8289
-          </a>
-        </div>
+            <a href="tel:+380676738289" className="phone__number">
+              +380 67 673 8289
+            </a>
+          </div>
         </div>
         <div className="header__burger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </header>
   );
