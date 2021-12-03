@@ -1,5 +1,6 @@
 import React from "react";
 import SwiperCore, { Autoplay, Navigation } from "swiper";
+import Phone from "../Components/PhoneForm";
 import { Swiper, SwiperSlide } from "swiper/react";
 import MainForm from "../Components/MainForm";
 import stortz from "../assets/img/kaban.png";
@@ -176,15 +177,7 @@ export default function MetalPlasticProducts() {
               Є питання? Залиште свій номер телефона та отримайте безкоштовну
               консультацію
             </p>
-            <form action="../telegram.php" method="post">
-              <input
-                type="tel"
-                name="user_phone"
-                id="user_phone"
-                placeholder="Вкажіть ваш номер телефону"
-              />
-              <button type="submit">Надіслати</button>
-            </form>
+            <Phone/>
           </div>
         </div>
       </section>
@@ -227,10 +220,10 @@ export default function MetalPlasticProducts() {
             <Swiper
               className="furnitura__slider"
               slidesPerView={"auto"}
-              loop={true}
               navigation={{
-                prevEl: ".furniture-button-prev",
-                nextEl: ".furniture-button-next",
+                prevEl: ".catalog-button-prev",
+                nextEl: ".catalog-button-next",
+                disabledClass: "catalog-button-disable",
               }}
             >
               {furnitura.map((item, index) => (
@@ -239,12 +232,8 @@ export default function MetalPlasticProducts() {
                 </SwiperSlide>
               ))}
               <div className="furniture__navigation">
-                <div className="furniture-button-prev">
-                  <img src="./assets/img/left.png" alt="" />
-                </div>
-                <div className="furniture-button-next">
-                  <img src="./assets/img/right.png" alt="" />
-                </div>
+              <div className="catalog-button-prev"></div>
+                <div className="catalog-button-next"></div>
               </div>
             </Swiper>
             <div className="furnitura__brand">

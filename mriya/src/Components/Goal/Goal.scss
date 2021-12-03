@@ -12,15 +12,25 @@
         flex-direction: row-reverse;
 
         .goal__img {
+            height: 600px;
             margin-right: 0;
             margin-left: 91px;
+            img{
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 }
 
 .goal__img {
+    height: 600px;
     max-width: 648px;
     margin-right: 91px;
+    img{
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .goal__info {

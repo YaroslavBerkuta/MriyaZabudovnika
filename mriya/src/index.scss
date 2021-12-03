@@ -724,7 +724,13 @@ section {
   z-index: 999;
 }
 
-
+.label{
+  background-color: #292D32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 0;
+}
 
 .header .container {
   display: flex;
@@ -924,19 +930,9 @@ section {
   position: absolute;
   bottom: 0;
   right: 0;
-  background: #DAF5F5;
   padding: 5px 10px;
   cursor: pointer;
 
-  &::after {
-    position: absolute;
-    content: "";
-    display: block;
-    width: 1px;
-    height: 30px;
-    background-color: #44C8D4;
-    left: 50%;
-  }
 
   .furniture-button-prev {
     margin-right: 10px;
@@ -1601,7 +1597,9 @@ section {
   cursor: pointer;
   color: #FFFFFF;
 }
-
+.portfolio{
+  padding: 100px 0;
+}
 .portfolio__flex {
   display: flex;
 }
@@ -2171,12 +2169,17 @@ section {
   display: flex;
   flex: 0 0 100%;
   border-radius: 8px;
-
+}
+.categorie__img{
+  flex: 0 0 50%;
+  height: 637px;
   img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 8px 0 0 8px;
   }
 }
-
 .categorie__info-title {
   font-weight: bold;
   font-size: 24px;
@@ -2287,6 +2290,9 @@ section {
   display: inline-flex;
   background: #10A9B7;
   border-radius: 8px;
+}
+.newLIne__slider .swiper-wrapper .swiper-slide img{
+  border-radius: 8px 0 0 8px;
 }
 
 @media (max-width: 1536px) {
@@ -2640,7 +2646,7 @@ section {
     position: fixed;
     background: rgba(28, 28, 28, 0.8);
     backdrop-filter: blur(15px);
-    top: 100px;
+    top: 74px;
     left: 0;
     padding-left: 20px;
     height: 100vh;
@@ -3004,9 +3010,16 @@ section {
   }
 
   .hero__input {
-    max-width: 260px;
+    max-width: 280px;
+    padding: 16px 15px 16px 16px;
+    margin-right: 15px !important;
   }
-
+  .catalog__slide img {
+    border-radius: 8px 8px 0 0;
+}
+.catalog__flex:nth-child(2n-1) .catalog__slide img {
+  border-radius: 8px 8px 0 0;
+}
   .catalog__title {
     font-size: 15px;
   }
@@ -3057,10 +3070,30 @@ section {
     font-size: 10px;
   }
 
-  .quick-form p {
-    font-size: 12px;
+  .quick-form form button{
+    margin-left: 0;
   }
-
+  .manufacturer__flex{
+    justify-content: flex-start;
+  }
+  .categorie__flex .swiper-wrapper{
+    align-items: flex-start;
+  }
+  .categorie__item img{
+    border-radius: 8px 8px 0 0;
+  }
+  .newLIne__slider .swiper-wrapper .swiper-slide img{
+    border-radius: 8px 8px 0 0;
+  }
+  .manufacturer__img{
+   flex: 0 0 30%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+  }
+  .manufacturer__img{
+    margin-right: 40px;
+  }
   .quick-form {
     padding: 64px 24px;
 
@@ -3086,8 +3119,8 @@ section {
   }
 
   .furnitura__brand div {
-    width: 190px;
-    padding: 40px 0;
+    width: 160px;
+    padding: 40px;
   }
 
   .categorie__flex .catalog__navigation {

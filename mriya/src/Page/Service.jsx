@@ -39,7 +39,7 @@ export default function Service(){
                         <div className="service__item">
                             <img src="./assets/img/awardService.svg" alt=""/>
                             <div className="service__info">
-                                <h3>Заміри</h3>
+                                <h3>Гарантійне обслоговування</h3>
                                 <p>Не следует, однако, забывать, что синтетическое тестирование предопределяет высокую востребованность соответствующих</p>
                             </div>
                         </div>

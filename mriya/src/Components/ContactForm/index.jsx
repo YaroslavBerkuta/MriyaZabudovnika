@@ -13,6 +13,8 @@ class ContactForm extends Component {
             contact_name: "",
             contact_phone: "",
             contact_msg: "",
+            dissable: false,
+            button: "Надіслати"
         };
     };
 
@@ -27,6 +29,8 @@ class ContactForm extends Component {
             .then((result) => {
                 this.setState({
                     mailSent: result.data.sent,
+                    button: "Надіслано",
+                    dissable: true,
                 });
             })
             .catch((error) => this.setState({ error: error.message }));
@@ -37,11 +41,11 @@ class ContactForm extends Component {
                 <h3>Залиште нам повідомлення</h3>
                 <form action="">
                     <div className="form__top">
-                        <input type="text" placeholder="Ім’я" name="contact_name" id='contact_name' onChange={(e) => this.setState({ contact_name: e.target.value })}/>
-                        <input type="tel" placeholder="Номер телефону" name='contact_phone' id='contact_phone' onChange={(e) => this.setState({ contact_phone: e.target.value })}/>
+                        <input type="text" placeholder="Ім’я" name="contact_name" id='contact_name' onChange={(e) => this.setState({ contact_name: e.target.value })} disabled={this.state.dissable}/>
+                        <input type="tel" placeholder="Номер телефону" name='contact_phone' id='contact_phone' onChange={(e) => this.setState({ contact_phone: e.target.value })} disabled={this.state.dissable}/>
                     </div>
-                    <textarea placeholder="Повідомлення" name='contact_msg' id='contact_msg' onChange={(e) => this.setState({ contact_msg: e.target.value })}></textarea>
-                    <button type="submit"  onClick={(e) => this.handleFormSubmit(e)}>Надіслати</button>
+                    <textarea placeholder="Повідомлення" name='contact_msg' id='contact_msg' onChange={(e) => this.setState({ contact_msg: e.target.value })} disabled={this.state.dissable}></textarea>
+                    <button type="submit"  onClick={(e) => this.handleFormSubmit(e)}  disabled={this.state.dissable} >{this.state.button}</button>
                 </form>
             </div>
         );

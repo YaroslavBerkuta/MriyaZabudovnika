@@ -2,15 +2,19 @@ import React from "react";
 import { Component } from "react";
 import axios from "axios";
 
-const API_PATH = "https://blagovischenska.com/";
+const API_PATH = "https://blagovischenska.com/main.php";
 
 class MainForm extends Component {
+
+  
   constructor(props) {
     super(props);
     this.state = {
       user_name: "",
       user_phone: "",
       user_select: "",
+      button: "Надіслати",
+      dissable: false,
     };
   }
 
@@ -25,12 +29,15 @@ class MainForm extends Component {
       .then((result) => {
         this.setState({
           mailSent: result.data.sent,
+          button: "Надіслано",
+          dissable: true
         });
       })
       .catch((error) => this.setState({ error: error.message }));
   };
   render() {
     return (
+      
       <section className="main__form">
         <div className="container">
           <div className="form__flex">
@@ -44,7 +51,7 @@ class MainForm extends Component {
               </p>
             </div>
             <div className="form__main">
-              <form className="main-form" action="#">
+              <form className="main-form" onSubmit={(e)=>console.log(e)} >
                 <input
                   type="text"
                   name="user_name"
@@ -52,6 +59,7 @@ class MainForm extends Component {
                   placeholder="Ім`я"
                   className="form__main-input"
                   onChange={(e) => this.setState({ user_name: e.target.value })}
+                  disabled={this.state.dissable}
                 />
                 <input
                   type="tel"
@@ -62,6 +70,7 @@ class MainForm extends Component {
                   onChange={(e) =>
                     this.setState({ user_phone: e.target.value })
                   }
+                  disabled={this.state.dissable}
                 />
                 <select
                   className="form__main-input"
@@ -70,6 +79,7 @@ class MainForm extends Component {
                   onChange={(e) =>
                     this.setState({ user_select: e.target.value })
                   }
+                  disabled={this.state.dissable}
                 >
                   <option>Вас цікавить..</option>
                   <option value="Металопластикові вироби">
@@ -84,10 +94,11 @@ class MainForm extends Component {
                 </select>
                 <input
                   type="submit"
-                  value="Надіслати"
+                  value={this.state.button}
                   className="form__main-btn"
                   id="sendMail"
                   onClick={(e) => this.handleFormSubmit(e)}
+                  disabled={this.state.dissable}
                 />
               </form>
             </div>

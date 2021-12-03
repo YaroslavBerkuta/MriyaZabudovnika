@@ -1,16 +1,18 @@
 import React from "react";
-import logo from "../../assets/img/logo.svg";
+import logo from "../../assets/img/mz-01.svg";
+import label from "../../assets/img/label.png"
 export default function Footer() {
   return (
+    <>
     <footer className="footer">
       <div className="container">
         <div className="footer__column">
           <div className="footer__logo">
-            <img src={logo} alt="logoFoter" />
+            <img src={logo} alt="logoFoter" width={110}/>
           </div>
           <div className="footer__deskription">
             <p>
-              Виробництво металопластикових виробів вхідних та міжкімнатних
+              Виробництво металопластикових виробів, вхідних та міжкімнатних
               дверей
             </p>
           </div>
@@ -41,10 +43,16 @@ export default function Footer() {
         </div>
         <div className="footer__column">
           <div className="footer__adress">
-            <p>вулиця Чорновола, 31/1 Хмельницький</p>
+            <p>Хмельницький, вулиця Чорновола 31/1</p>
           </div>
         </div>
       </div>
     </footer>
+    <div className="label">
+      <div className="container">
+        <a href="https://creatory.studio/"><img src={label} alt="" /></a>
+      </div>
+    </div>
+    </>
   );
 }
